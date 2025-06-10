@@ -10,6 +10,15 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
+      kernel_config:
+        description: "compile kernel config"
+        required: false
+        default: "config-6.1"
+        type: choice
+        options:
+          - config-6.1 
+          - config-5.15 
+
       kernel_source:
         description: "Select the kernel source"
         required: false
@@ -164,6 +173,7 @@ jobs:
           kernel_toolchain: ${{ inputs.kernel_toolchain }}
           compress_format: ${{ inputs.compress_format }}
           silent_log: ${{ inputs.silent_log }}
+          kernel_config: ${{ inputs.kernel_config }}
 
       - name: Upload Kernel to Release
         uses: ncipollo/release-action@main
