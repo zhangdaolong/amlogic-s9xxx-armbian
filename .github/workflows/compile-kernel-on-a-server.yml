@@ -13,10 +13,11 @@ on:
       kernel_config:
         description: "compile kernel config"
         required: false
-        default: "config-6.1"
+        default: "config-6.1-uwe"
         type: choice
         options:
           - config-6.1 
+          - config-6.1-uwe
           - config-5.15 
 
       kernel_source:
