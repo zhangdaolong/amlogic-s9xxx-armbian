@@ -174,7 +174,7 @@ jobs:
           compress_format: ${{ inputs.compress_format }}
           silent_log: ${{ inputs.silent_log }}
           kernel_config: ${{ inputs.kernel_config }}
-          kernel_patch: kernel-patch/linux-6.1.y
+          kernel_patch: tools/patch/
           auto_patch: true
 
       - name: Upload Kernel to Release
